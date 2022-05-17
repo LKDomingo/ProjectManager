@@ -49,7 +49,7 @@ const AllProducts = () => {
                     productList.map((product, idx) => {
                         return (
                             <div key={product._id}>
-                                <div onClick={() => displayOneProduct(product._id) } className="card btn m-2 hover-shadow" style={{ width: '18rem', backgroundColor: '#EAEAEA', boxShadow: "1px 2px 3px #9E9E9E" }}>
+                                <div onClick={() => displayOneProduct(product._id) } className="card btn mt-2 mx-2 hover-shadow" style={{ width: '18rem', backgroundColor: '#EAEAEA', boxShadow: "1px 2px 3px #9E9E9E" }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{product.title}</h5>
                                         <h6 className="card-subtitle mb-2 text-muted">Price: ${product.price}</h6>
@@ -57,7 +57,7 @@ const AllProducts = () => {
                                             {/* <a href="#" className="card-link">Another link</a> */}
                                     </div>
                                 </div>
-                                        <button className='btn btn-sm btn-danger' onClick={()=>deleteProduct(product._id) }>Delete</button>
+                                        <button className='btn btn-sm btn-danger m-2' onClick={()=>deleteProduct(product._id) }>Delete</button>
                             </div>
                         )
                     })

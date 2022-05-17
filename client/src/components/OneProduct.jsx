@@ -9,14 +9,19 @@ const OneProduct = () => {
     const { id } = useParams();
 
     useEffect(() => {
+        let isMounted = true;
         axios.get(`http://localhost:8000/api/products/${id}`)
             .then(res => {
+                if(isMounted) {
                 setProduct(res.data.results[0]);
+                }
             })
             .catch(err => {
                 console.log("error: ", err)
             })
-    }, [])
+            return () => isMounted = false;
+
+    }, [id])
 
     //DELETE PRODUCT
     const deleteProduct = () => {
